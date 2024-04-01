@@ -4,7 +4,7 @@ using namespace std;
 
 template<typename T>
 int recursive_last(const vector<T>& items, const T& target, size_t pos_last) {
-    if (pos_last == -1) {
+    if (pos_last == -1) { //returns if target is not in vector
         return -1;
     }
 
@@ -22,13 +22,13 @@ int last_occurrence(const vector<T>& items, const T& target) {
 }
 
 int main() {
-    vector<int> items = { 1, 2, 3, 4, 2, 5, 3 };
-    int target = 2;
-    int last_index = last_occurrence(items, target);
+    vector<int> items = { 1, 2, 3, 4, 2, 5, 3 }; //creates list
+    int target = 2; //sets target
+    int last_index = last_occurrence(items, target); //finds index of last occurrence
     if (last_index != -1) {
         cout << "Last occurrence of " << target << " is at index " << last_index << endl;
     }
-    else {
+    else { //runs if target is not in vector
         cout << target << " not found in the vector" << endl;
     }
     return 0;
